@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class ApiService {
   private http = inject(HttpClient);
-  private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = '/api';
 
   get<T>(path: string, params?: Record<string, string | number | boolean | undefined>): Observable<T> {
     let httpParams = new HttpParams();

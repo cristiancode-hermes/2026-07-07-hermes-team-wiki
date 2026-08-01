@@ -23,7 +23,7 @@ import { SpaceFormModalComponent } from './space-form-modal.component';
         </div>
         <button
           (click)="showCreateModal.set(true)"
-          class="inline-flex items-center gap-2 rounded-lg bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium px-4 py-2 transition-colors"
+          class="inline-flex items-center gap-2 rounded-md bg-primary-600 hover:bg-primary-700 text-ink text-sm font-medium px-4 py-2 transition-colors"
         >
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -35,9 +35,9 @@ import { SpaceFormModalComponent } from './space-form-modal.component';
       @if (loading()) {
         <div class="grid gap-4">
           @for (_ of [1,2,3]; track _) {
-            <div class="animate-pulse bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 p-5">
-              <div class="h-5 bg-secondary-200 dark:bg-secondary-700 rounded w-1/3 mb-3"></div>
-              <div class="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-2/3"></div>
+            <div class="animate-pulse bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 p-5">
+              <div class="h-5 bg-secondary-200 dark:bg-secondary-300 rounded w-1/3 mb-3"></div>
+              <div class="h-4 bg-secondary-200 dark:bg-secondary-300 rounded w-2/3"></div>
             </div>
           }
         </div>
@@ -56,7 +56,7 @@ import { SpaceFormModalComponent } from './space-form-modal.component';
           @for (space of spaces(); track space.id) {
             <a
               [routerLink]="['/spaces', space.id]"
-              class="block bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 p-5 hover:shadow-md hover:border-primary-300 dark:hover:border-primary-700 transition-all"
+              class="block bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 p-5 hover: hover:border-primary-300 dark:hover:border-primary-700 transition-all"
             >
               <div class="flex items-start justify-between">
                 <div class="flex items-start gap-3">

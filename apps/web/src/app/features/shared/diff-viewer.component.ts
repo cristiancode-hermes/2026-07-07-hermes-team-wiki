@@ -4,17 +4,17 @@ import { Component, input } from '@angular/core';
   selector: 'app-diff-viewer',
   standalone: true,
   template: `
-    <div class="font-mono text-sm border border-secondary-200 dark:border-secondary-700 rounded-lg overflow-hidden">
+    <div class="font-mono text-sm border border-secondary-200 dark:border-secondary-700 rounded-md overflow-hidden">
       @if (oldContent() === newContent()) {
         <div class="p-4 text-center text-secondary-500 dark:text-secondary-400">No changes</div>
       } @else {
         <div class="divide-y divide-secondary-200 dark:divide-secondary-700">
           @for (line of diffLines(); track $index) {
             <div class="flex">
-              <span class="w-12 shrink-0 text-right pr-3 py-0.5 text-secondary-400 dark:text-secondary-500 select-none border-r border-secondary-200 dark:border-secondary-700 bg-secondary-50 dark:bg-secondary-900">
+              <span class="w-12 shrink-0 text-right pr-3 py-0.5 text-secondary-400 dark:text-secondary-500 select-none border-r border-secondary-200 dark:border-secondary-700 bg-secondary-50 dark:bg-secondary-100">
                 {{ line.oldLine || '' }}
               </span>
-              <span class="w-12 shrink-0 text-right pr-3 py-0.5 text-secondary-400 dark:text-secondary-500 select-none border-r border-secondary-200 dark:border-secondary-700 bg-secondary-50 dark:bg-secondary-900">
+              <span class="w-12 shrink-0 text-right pr-3 py-0.5 text-secondary-400 dark:text-secondary-500 select-none border-r border-secondary-200 dark:border-secondary-700 bg-secondary-50 dark:bg-secondary-100">
                 {{ line.newLine || '' }}
               </span>
               <span class="flex-1 px-3 py-0.5 whitespace-pre-wrap break-all" [class]="lineClass(line.type)">

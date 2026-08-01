@@ -9,7 +9,7 @@ import { RegisterFormComponent } from './register-form.component';
   standalone: true,
   imports: [LoginFormComponent, RegisterFormComponent],
   template: `
-    <div class="min-h-screen flex items-center justify-center bg-secondary-50 dark:bg-secondary-900 px-4 py-12">
+    <div class="min-h-screen flex items-center justify-center bg-secondary-50 dark:bg-secondary-100 px-4 py-12">
       <div class="w-full max-w-md">
         <div class="text-center mb-8">
           <span class="text-4xl">📝</span>
@@ -17,7 +17,7 @@ import { RegisterFormComponent } from './register-form.component';
           <p class="mt-1 text-sm text-secondary-500">Your team's knowledge base</p>
         </div>
 
-        <div class="bg-white dark:bg-secondary-800 rounded-xl shadow-sm border border-secondary-200 dark:border-secondary-700 p-6">
+        <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md  border border-secondary-200 dark:border-secondary-700 p-6">
           <div class="flex border-b border-secondary-200 dark:border-secondary-700 mb-6">
             <button
               (click)="tab.set('login')"

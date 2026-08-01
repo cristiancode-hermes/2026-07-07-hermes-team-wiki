@@ -29,9 +29,9 @@ import { SkeletonLoaderComponent } from '../shared/skeleton-loader.component';
       @if (loading()) {
         <div class="grid gap-4">
           @for (_ of [1,2,3]; track _) {
-            <div class="animate-pulse bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 p-5">
-              <div class="h-5 bg-secondary-200 dark:bg-secondary-700 rounded w-1/2 mb-3"></div>
-              <div class="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-3/4"></div>
+            <div class="animate-pulse bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 p-5">
+              <div class="h-5 bg-secondary-200 dark:bg-secondary-300 rounded w-1/2 mb-3"></div>
+              <div class="h-4 bg-secondary-200 dark:bg-secondary-300 rounded w-3/4"></div>
             </div>
           }
         </div>

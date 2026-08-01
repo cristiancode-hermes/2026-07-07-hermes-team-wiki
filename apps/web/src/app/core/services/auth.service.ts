@@ -1,6 +1,7 @@
 import { Injectable, signal, computed, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 import { User } from '../models';
 
 @Injectable({ providedIn: 'root' })
@@ -9,25 +10,32 @@ export class AuthService {
   private router = inject(Router);
 
   readonly currentUser = signal<User | null>(null);
-  readonly isAuthenticated = computed(() => !!this.currentUser() && !!localStorage.getItem('jwt_token'));
+  readonly isAuthenticated = computed(() => !!localStorage.getItem('jwt_token'));
   readonly isAdmin = computed(() => this.currentUser()?.role === 'admin');
 
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = '/api';
+  private initPromise: Promise<void> | null = null;
 
-  constructor() {
-    this.loadUser();
-  }
-
-  private loadUser(): void {
+  /**
+   * Called by APP_INITIALIZER. Blocks app boot until the stored token
+   * is validated against /api/auth/me, so route guards see the correct
+   * auth state synchronously.
+   */
+  async init(): Promise<void> {
+    if (this.initPromise) return this.initPromise;
     const token = localStorage.getItem('jwt_token');
-    if (token) {
-      this.http.get<{ user: User }>(`${this.apiUrl}/auth/me`).subscribe({
-        next: (res) => this.currentUser.set(res.user),
-        error: () => {
-          localStorage.removeItem('jwt_token');
-        }
-      });
+    if (!token) {
+      this.initPromise = Promise.resolve();
+      return this.initPromise;
     }
+    this.initPromise = lastValueFrom(
+      this.http.get<User>(`${this.apiUrl}/auth/me`)
+    ).then((user) => {
+      this.currentUser.set(user);
+    }).catch(() => {
+      localStorage.removeItem('jwt_token');
+    });
+    return this.initPromise;
   }
 
   async login(email: string, password: string): Promise<{ user: User; token: string }> {

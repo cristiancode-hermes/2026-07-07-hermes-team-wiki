@@ -12,16 +12,16 @@ export class Organization {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ unique: true })
+  @Column({ unique: true, type: 'varchar' })
   name: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   slug: string | null;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   logoUrl: string | null;
 
-  @Column({ default: 'active' })
+  @Column({ default: 'active', type: 'varchar' })
   status: string;
 
   @CreateDateColumn()

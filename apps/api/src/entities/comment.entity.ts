@@ -13,27 +13,27 @@ export class Comment {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ type: 'text' })
   content: string;
 
-  @Column({ default: false })
+  @Column({ default: false, type: 'boolean' })
   isEdited: boolean;
 
-  @Column()
+  @Column({ type: 'varchar' })
   organizationId: string;
 
   @ManyToOne(() => Organization, org => org.comments)
   @JoinColumn({ name: 'organizationId' })
   organization: Organization;
 
-  @Column()
+  @Column({ type: 'varchar' })
   pageId: string;
 
   @ManyToOne(() => Page, page => page.comments)
   @JoinColumn({ name: 'pageId' })
   page: Page;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   authorId: string | null;
 
   @ManyToOne(() => User, user => user.comments)

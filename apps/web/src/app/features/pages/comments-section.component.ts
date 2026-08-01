@@ -12,7 +12,7 @@ import { ErrorStateComponent } from '../shared/error-state.component';
   standalone: true,
   imports: [CommentItemComponent, CommentFormComponent, EmptyStateComponent, ErrorStateComponent],
   template: `
-    <div class="bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm">
+    <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 ">
       <div class="px-5 py-4 border-b border-secondary-200 dark:border-secondary-700">
         <h3 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100">Comments</h3>
       </div>

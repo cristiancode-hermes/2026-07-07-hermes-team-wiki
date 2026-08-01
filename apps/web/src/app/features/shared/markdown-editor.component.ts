@@ -8,16 +8,16 @@ import { MarkdownViewerComponent } from './markdown-viewer.component';
   standalone: true,
   imports: [FormsModule, EditorToolbarComponent, MarkdownViewerComponent],
   template: `
-    <div class="border border-secondary-300 dark:border-secondary-600 rounded-lg overflow-hidden">
+    <div class="border border-secondary-300 dark:border-secondary-600 rounded-md overflow-hidden">
       <app-editor-toolbar (action)="handleToolbar($event)" />
       <div class="flex flex-col lg:flex-row">
         <textarea
           [ngModel]="value()"
           (ngModelChange)="value.set($event)"
-          class="w-full lg:w-1/2 min-h-[400px] p-4 font-mono text-sm bg-white dark:bg-secondary-800 text-secondary-900 dark:text-secondary-100 border-r border-secondary-200 dark:border-secondary-700 focus:outline-none resize-y"
+          class="w-full lg:w-1/2 min-h-[400px] p-4 font-mono text-sm bg-secondary-100 dark:bg-secondary-200 text-secondary-900 dark:text-secondary-100 border-r border-secondary-200 dark:border-secondary-700 focus:outline-none resize-y"
           placeholder="Write your markdown here..."
         ></textarea>
-        <div class="w-full lg:w-1/2 min-h-[400px] p-4 bg-white dark:bg-secondary-800 overflow-auto">
+        <div class="w-full lg:w-1/2 min-h-[400px] p-4 bg-secondary-100 dark:bg-secondary-200 overflow-auto">
           <app-markdown-viewer [content]="value()" />
         </div>
       </div>

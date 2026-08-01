@@ -17,46 +17,46 @@ export class Page {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ type: 'varchar' })
   title: string;
 
-  @Column()
+  @Column({ type: 'varchar' })
   slug: string;
 
-  @Column({ default: '' })
+  @Column({ default: '', type: 'text' })
   content: string;
 
-  @Column({ default: 1 })
+  @Column({ default: 1, type: 'int' })
   versionNumber: number;
 
-  @Column({ default: false })
+  @Column({ default: false, type: 'boolean' })
   isHomePage: boolean;
 
-  @Column({ default: 0 })
+  @Column({ default: 0, type: 'int' })
   sortOrder: number;
 
-  @Column()
+  @Column({ type: 'varchar' })
   organizationId: string;
 
   @ManyToOne(() => Organization, org => org.pages)
   @JoinColumn({ name: 'organizationId' })
   organization: Organization;
 
-  @Column()
+  @Column({ type: 'varchar' })
   spaceId: string;
 
   @ManyToOne(() => Space, space => space.pages)
   @JoinColumn({ name: 'spaceId' })
   space: Space;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   authorId: string | null;
 
   @ManyToOne(() => User, user => user.pages)
   @JoinColumn({ name: 'authorId' })
   author: User | null;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   parentId: string | null;
 
   @ManyToOne(() => Page, page => page.children)

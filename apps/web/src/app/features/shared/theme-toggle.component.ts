@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   template: `
     <button
       (click)="toggle.emit()"
-      class="p-2 rounded-lg text-secondary-500 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-secondary-700 transition-colors"
+      class="p-2 rounded-md text-secondary-500 hover:text-secondary-700 dark:text-secondary-400 dark:hover:text-secondary-200 hover:bg-secondary-100 dark:hover:bg-secondary-700 transition-colors"
       [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
     >
       @if (isDark()) {

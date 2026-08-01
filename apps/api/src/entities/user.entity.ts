@@ -12,25 +12,25 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ type: 'varchar' })
   name: string;
 
-  @Column({ unique: true })
+  @Column({ unique: true, type: 'varchar' })
   email: string;
 
-  @Column()
+  @Column({ type: 'varchar' })
   passwordHash: string;
 
-  @Column({ default: 'editor' })
+  @Column({ default: 'editor', type: 'varchar' })
   role: 'admin' | 'editor' | 'viewer';
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   avatarUrl: string | null;
 
-  @Column({ default: 'active' })
+  @Column({ default: 'active', type: 'varchar' })
   status: 'active' | 'inactive';
 
-  @Column()
+  @Column({ type: 'varchar' })
   organizationId: string;
 
   @ManyToOne(() => Organization, org => org.users)

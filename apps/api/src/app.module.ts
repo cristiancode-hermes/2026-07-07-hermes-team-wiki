@@ -18,15 +18,28 @@ import { CommonModule } from './common/common.module';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: (config: ConfigService) => ({
-        type: 'better-sqlite3',
-        database: config.get<string>('DATABASE_PATH', 'data/wiki.db'),
-        entities: [__dirname + '/**/*.entity{.ts,.js}'],
-        synchronize: true,
-      }),
+      useFactory: (config: ConfigService) => {
+        const dbType = config.get<string>('DATABASE_TYPE', 'better-sqlite3');
+        if (dbType === 'postgres') {
+          return {
+            type: 'postgres',
+            url: config.get<string>('DATABASE_URL'),
+            ssl: { rejectUnauthorized: false },
+            entities: [__dirname + '/**/*.entity{.ts,.js}'],
+            synchronize: true,
+          };
+        }
+        return {
+          type: 'better-sqlite3',
+          database: config.get<string>('DATABASE_PATH', 'data/wiki.db'),
+          entities: [__dirname + '/**/*.entity{.ts,.js}'],
+          synchronize: true,
+        };
+      },
       inject: [ConfigService],
     }),
     JwtModule.registerAsync({
+      global: true,
       imports: [ConfigModule],
       useFactory: (config: ConfigService) => ({
         secret: config.get<string>('JWT_SECRET', 'wiki-dev-secret'),

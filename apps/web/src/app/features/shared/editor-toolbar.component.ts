@@ -4,7 +4,7 @@ import { Component, output } from '@angular/core';
   selector: 'app-editor-toolbar',
   standalone: true,
   template: `
-    <div class="flex flex-wrap items-center gap-1 p-2 bg-secondary-50 dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-700">
+    <div class="flex flex-wrap items-center gap-1 p-2 bg-secondary-50 dark:bg-secondary-100 border-b border-secondary-200 dark:border-secondary-700">
       <button (click)="action.emit('bold')" class="toolbar-btn" title="Bold (Ctrl+B)"><strong>B</strong></button>
       <button (click)="action.emit('italic')" class="toolbar-btn" title="Italic (Ctrl+I)"><em>I</em></button>
       <span class="w-px h-5 bg-secondary-300 dark:bg-secondary-600 mx-1"></span>
@@ -20,11 +20,23 @@ import { Component, output } from '@angular/core';
   `,
   styles: `
     .toolbar-btn {
-      @apply px-2.5 py-1 text-xs font-medium rounded 
-             text-secondary-600 dark:text-secondary-400 
-             hover:bg-secondary-200 dark:hover:bg-secondary-700 
-             hover:text-secondary-800 dark:hover:text-secondary-200 
-             transition-colors;
+      padding: 0.25rem 0.625rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 0.25rem;
+      color: var(--color-secondary-600);
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .dark .toolbar-btn {
+      color: var(--color-secondary-400);
+    }
+    .toolbar-btn:hover {
+      background-color: var(--color-secondary-200);
+      color: var(--color-secondary-800);
+    }
+    .dark .toolbar-btn:hover {
+      background-color: var(--color-secondary-700);
+      color: var(--color-secondary-200);
     }
   `,
 })

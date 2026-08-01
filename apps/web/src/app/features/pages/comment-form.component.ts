@@ -13,12 +13,12 @@ import { FormsModule } from '@angular/forms';
         (ngModelChange)="value.set($event)"
         name="comment"
         [placeholder]="placeholder()"
-        class="flex-1 rounded-lg border border-secondary-300 dark:border-secondary-600 bg-white dark:bg-secondary-800 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
+        class="flex-1 rounded-md border border-secondary-300 dark:border-secondary-600 bg-secondary-100 dark:bg-secondary-200 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
       />
       <button
         type="submit"
         [disabled]="!value().trim()"
-        class="rounded-lg bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 transition-colors"
+        class="rounded-md bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-ink text-sm font-medium px-4 py-2 transition-colors"
       >
         {{ buttonLabel() }}
       </button>

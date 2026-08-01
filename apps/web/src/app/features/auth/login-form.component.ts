@@ -17,7 +17,7 @@ import { AuthService } from '../../core/services/auth.service';
           (ngModelChange)="email.set($event)"
           name="email"
           required
-          class="w-full rounded-lg border border-secondary-300 dark:border-secondary-600 bg-white dark:bg-secondary-800 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
+          class="w-full rounded-md border border-secondary-300 dark:border-secondary-600 bg-secondary-100 dark:bg-secondary-200 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
           placeholder="you@company.com"
           autocomplete="email"
         />
@@ -32,7 +32,7 @@ import { AuthService } from '../../core/services/auth.service';
           name="password"
           required
           minlength="6"
-          class="w-full rounded-lg border border-secondary-300 dark:border-secondary-600 bg-white dark:bg-secondary-800 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
+          class="w-full rounded-md border border-secondary-300 dark:border-secondary-600 bg-secondary-100 dark:bg-secondary-200 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 placeholder-secondary-400 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
           placeholder="Enter your password"
           autocomplete="current-password"
         />
@@ -45,7 +45,7 @@ import { AuthService } from '../../core/services/auth.service';
       <button
         type="submit"
         [disabled]="loading() || !isValid()"
-        class="w-full rounded-lg bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2.5 transition-colors flex items-center justify-center gap-2"
+        class="w-full rounded-md bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-ink text-sm font-medium px-4 py-2.5 transition-colors flex items-center justify-center gap-2"
       >
         @if (loading()) {
           <svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">

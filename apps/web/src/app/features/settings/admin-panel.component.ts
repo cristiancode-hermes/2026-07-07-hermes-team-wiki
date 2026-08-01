@@ -17,7 +17,7 @@ import { SkeletonLoaderComponent } from '../shared/skeleton-loader.component';
         <p class="text-sm text-secondary-500 dark:text-secondary-400 mt-1">Manage organization members</p>
       </div>
 
-      <div class="bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm">
+      <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 ">
         <div class="px-5 py-4 border-b border-secondary-200 dark:border-secondary-700">
           <h2 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100">Members ({{ members().length }})</h2>
         </div>

@@ -18,13 +18,13 @@ import { ErrorStateComponent } from '../shared/error-state.component';
       </div>
 
       @if (saved()) {
-        <div class="rounded-lg bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800 p-4 text-sm text-success-700 dark:text-success-300">
+        <div class="rounded-md bg-success-50 dark:bg-success-900/20 border border-success-200 dark:border-success-800 p-4 text-sm text-success-700 dark:text-success-300">
           Profile updated successfully
         </div>
       }
 
       @if (user(); as user) {
-        <div class="bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm">
+        <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 ">
           <div class="px-5 py-4 border-b border-secondary-200 dark:border-secondary-700">
             <h2 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100">Profile</h2>
           </div>
@@ -45,7 +45,7 @@ import { ErrorStateComponent } from '../shared/error-state.component';
                 [ngModel]="name()"
                 (ngModelChange)="name.set($event)"
                 name="name"
-                class="w-full rounded-lg border border-secondary-300 dark:border-secondary-600 bg-white dark:bg-secondary-800 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
+                class="w-full rounded-md border border-secondary-300 dark:border-secondary-600 bg-secondary-100 dark:bg-secondary-200 px-3 py-2 text-sm text-secondary-900 dark:text-secondary-100 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none"
               />
             </div>
 
@@ -57,7 +57,7 @@ import { ErrorStateComponent } from '../shared/error-state.component';
               <button
                 type="submit"
                 [disabled]="saving()"
-                class="rounded-lg bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-white text-sm font-medium px-6 py-2 transition-colors"
+                class="rounded-md bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-ink text-sm font-medium px-6 py-2 transition-colors"
               >
                 @if (saving()) { Saving... } @else { Save Changes }
               </button>

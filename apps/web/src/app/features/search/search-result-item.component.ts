@@ -10,7 +10,7 @@ import { SearchResult } from '../../core/models';
   template: `
     <a
       [routerLink]="['/pages', result().id]"
-      class="block bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 p-5 hover:shadow-md hover:border-primary-300 dark:hover:border-primary-700 transition-all"
+      class="block bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 p-5 hover: hover:border-primary-300 dark:hover:border-primary-700 transition-all"
     >
       <div class="flex items-start gap-3">
         <div class="min-w-0 flex-1">

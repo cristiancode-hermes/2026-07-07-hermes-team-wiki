@@ -9,7 +9,7 @@ import { BadgeComponent, BadgeVariant } from '../shared/badge.component';
   standalone: true,
   imports: [DatePipe, AvatarComponent, BadgeComponent],
   template: `
-    <div class="flex items-start gap-4 p-4 bg-white dark:bg-secondary-800 rounded-lg border border-secondary-200 dark:border-secondary-700 hover:shadow-sm transition-shadow">
+    <div class="flex items-start gap-4 p-4 bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 hover: transition-">
       <div class="shrink-0">
         <app-avatar [name]="version().authorName || '?'" size="sm" />
       </div>

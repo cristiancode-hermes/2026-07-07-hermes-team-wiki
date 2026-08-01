@@ -10,26 +10,26 @@ export class Space {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ type: 'varchar' })
   name: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   description: string | null;
 
-  @Column({ default: '📁' })
+  @Column({ default: '📁', type: 'varchar' })
   icon: string;
 
-  @Column({ default: 0 })
+  @Column({ default: 0, type: 'int' })
   sortOrder: number;
 
-  @Column()
+  @Column({ type: 'varchar' })
   organizationId: string;
 
   @ManyToOne(() => Organization, org => org.spaces)
   @JoinColumn({ name: 'organizationId' })
   organization: Organization;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   homePageId: string | null;
 
   @CreateDateColumn()

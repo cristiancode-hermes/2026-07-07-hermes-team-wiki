@@ -12,7 +12,7 @@ import { ErrorStateComponent } from '../shared/error-state.component';
     @if (loading()) {
       <div class="space-y-3">
         @for (_ of [1,2,3]; track _) {
-          <div class="animate-pulse h-24 bg-secondary-100 dark:bg-secondary-800 rounded-lg"></div>
+          <div class="animate-pulse h-24 bg-secondary-100 dark:bg-secondary-200 rounded-md"></div>
         }
       </div>
     } @else if (error()) {
@@ -27,7 +27,7 @@ import { ErrorStateComponent } from '../shared/error-state.component';
               <div actions class="flex gap-2">
                 <button
                   (click)="revert.emit(version)"
-                  class="px-3 py-1.5 text-xs font-medium rounded-lg border border-secondary-300 dark:border-secondary-600 text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition-colors"
+                  class="px-3 py-1.5 text-xs font-medium rounded-md border border-secondary-300 dark:border-secondary-600 text-secondary-600 dark:text-secondary-400 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition-colors"
                 >
                   Revert
                 </button>

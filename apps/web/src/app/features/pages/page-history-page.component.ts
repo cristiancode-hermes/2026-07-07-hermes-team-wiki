@@ -21,7 +21,7 @@ import { ConfirmModalComponent } from '../shared/confirm-modal.component';
       </div>
 
       @if (selectedVersion()) {
-        <div class="bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm p-5">
+        <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700  p-5">
           <div class="flex items-center justify-between mb-4">
             <h3 class="text-sm font-semibold text-secondary-900 dark:text-secondary-100">
               Changes in v{{ selectedVersion()?.versionNumber }}

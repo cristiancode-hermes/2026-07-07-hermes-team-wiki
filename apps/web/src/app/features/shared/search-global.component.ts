@@ -13,19 +13,19 @@ import { SearchResult } from '../../core/models';
     <div class="relative">
       <button
         (click)="open()"
-        class="flex items-center gap-2 w-full sm:w-64 px-3 py-2 text-sm rounded-lg border border-secondary-300 dark:border-secondary-600 bg-white dark:bg-secondary-800 text-secondary-500 dark:text-secondary-400 hover:border-secondary-400 dark:hover:border-secondary-500 transition-colors text-left"
+        class="flex items-center gap-2 w-full sm:w-64 px-3 py-2 text-sm rounded-md border border-secondary-300 dark:border-secondary-600 bg-secondary-100 dark:bg-secondary-200 text-secondary-500 dark:text-secondary-400 hover:border-secondary-400 dark:hover:border-secondary-500 transition-colors text-left"
       >
         <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <span class="flex-1">Search pages...</span>
-        <kbd class="hidden sm:inline-flex items-center px-1.5 py-0.5 text-xs border border-secondary-300 dark:border-secondary-600 rounded bg-secondary-50 dark:bg-secondary-700 text-secondary-500 dark:text-secondary-400">Ctrl+K</kbd>
+        <kbd class="hidden sm:inline-flex items-center px-1.5 py-0.5 text-xs border border-secondary-300 dark:border-secondary-600 rounded bg-secondary-50 dark:bg-secondary-300 text-secondary-500 dark:text-secondary-400">Ctrl+K</kbd>
       </button>
 
       @if (isOpen()) {
         <div class="fixed inset-0 z-50 flex items-start justify-center pt-20" (click)="close()">
           <div class="fixed inset-0 bg-black/40" (click)="close()"></div>
-          <div class="relative w-full max-w-2xl mx-4 bg-white dark:bg-secondary-800 rounded-xl shadow-2xl overflow-hidden z-10" (click)="$event.stopPropagation()">
+          <div class="relative w-full max-w-2xl mx-4 bg-secondary-100 dark:bg-secondary-200 rounded-md -2xl overflow-hidden z-10" (click)="$event.stopPropagation()">
             <div class="flex items-center border-b border-secondary-200 dark:border-secondary-700">
               <svg class="w-5 h-5 ml-4 text-secondary-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />

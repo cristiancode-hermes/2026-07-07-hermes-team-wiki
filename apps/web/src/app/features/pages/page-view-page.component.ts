@@ -22,11 +22,11 @@ import { ErrorStateComponent } from '../shared/error-state.component';
   template: `
     @if (loading()) {
       <div class="animate-pulse space-y-4">
-        <div class="h-8 bg-secondary-200 dark:bg-secondary-700 rounded w-1/2"></div>
-        <div class="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-1/3"></div>
-        <div class="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-3/4 mt-8"></div>
-        <div class="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-full"></div>
-        <div class="h-4 bg-secondary-200 dark:bg-secondary-700 rounded w-5/6"></div>
+        <div class="h-8 bg-secondary-200 dark:bg-secondary-300 rounded w-1/2"></div>
+        <div class="h-4 bg-secondary-200 dark:bg-secondary-300 rounded w-1/3"></div>
+        <div class="h-4 bg-secondary-200 dark:bg-secondary-300 rounded w-3/4 mt-8"></div>
+        <div class="h-4 bg-secondary-200 dark:bg-secondary-300 rounded w-full"></div>
+        <div class="h-4 bg-secondary-200 dark:bg-secondary-300 rounded w-5/6"></div>
       </div>
     } @else if (error()) {
       <app-error-state [message]="error()" (retry)="loadPage()" />
@@ -44,7 +44,7 @@ import { ErrorStateComponent } from '../shared/error-state.component';
           <app-page-actions [pageId]="p.id" />
         </div>
 
-        <div class="bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm p-6 lg:p-8">
+        <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700  p-6 lg:p-8">
           <app-markdown-viewer [content]="p.content" />
         </div>
 

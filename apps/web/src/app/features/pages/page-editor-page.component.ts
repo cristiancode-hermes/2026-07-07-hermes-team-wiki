@@ -33,14 +33,14 @@ import { ErrorStateComponent } from '../shared/error-state.component';
           <div class="flex items-center gap-3 shrink-0 ml-4">
             <button
               (click)="cancel()"
-              class="rounded-lg border border-secondary-300 dark:border-secondary-600 px-4 py-2 text-sm font-medium text-secondary-700 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition-colors"
+              class="rounded-md border border-secondary-300 dark:border-secondary-600 px-4 py-2 text-sm font-medium text-secondary-700 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-700 transition-colors"
             >
               Cancel
             </button>
             <button
               (click)="save()"
               [disabled]="!title().trim() || saving()"
-              class="rounded-lg bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-white text-sm font-medium px-6 py-2 transition-colors flex items-center gap-2"
+              class="rounded-md bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-ink text-sm font-medium px-6 py-2 transition-colors flex items-center gap-2"
             >
               @if (saving()) {
                 <svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">

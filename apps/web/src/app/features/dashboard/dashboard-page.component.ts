@@ -29,7 +29,7 @@ import { SkeletonLoaderComponent } from '../shared/skeleton-loader.component';
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Recent Pages -->
-        <div class="bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm">
+        <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 ">
           <div class="px-5 py-4 border-b border-secondary-200 dark:border-secondary-700">
             <h2 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100">Recent Pages</h2>
           </div>
@@ -43,7 +43,7 @@ import { SkeletonLoaderComponent } from '../shared/skeleton-loader.component';
             } @else {
               <div class="space-y-3">
                 @for (page of recentPages(); track page.id) {
-                  <a [routerLink]="['/pages', page.id]" class="block p-3 rounded-lg hover:bg-secondary-50 dark:hover:bg-secondary-700/50 transition-colors border border-transparent hover:border-secondary-200 dark:hover:border-secondary-700">
+                  <a [routerLink]="['/pages', page.id]" class="block p-3 rounded-md hover:bg-secondary-50 dark:hover:bg-secondary-700/50 transition-colors border border-transparent hover:border-secondary-200 dark:hover:border-secondary-700">
                     <p class="text-sm font-medium text-secondary-900 dark:text-secondary-100">{{ page.title }}</p>
                     <div class="flex items-center gap-2 mt-1 text-xs text-secondary-500">
                       <span>{{ page.spaceName }}</span>
@@ -58,7 +58,7 @@ import { SkeletonLoaderComponent } from '../shared/skeleton-loader.component';
         </div>
 
         <!-- Activity Timeline -->
-        <div class="bg-white dark:bg-secondary-800 rounded-xl border border-secondary-200 dark:border-secondary-700 shadow-sm">
+        <div class="bg-secondary-100 dark:bg-secondary-200 rounded-md border border-secondary-200 dark:border-secondary-700 ">
           <div class="px-5 py-4 border-b border-secondary-200 dark:border-secondary-700">
             <h2 class="text-lg font-semibold text-secondary-900 dark:text-secondary-100">Activity</h2>
           </div>

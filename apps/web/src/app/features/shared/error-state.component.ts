@@ -13,7 +13,7 @@ import { Component, input, output } from '@angular/core';
       @if (showRetry()) {
         <button
           (click)="retry.emit()"
-          class="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700 transition-colors"
+          class="mt-6 inline-flex items-center gap-2 rounded-md bg-primary-600 px-4 py-2 text-sm font-medium text-ink hover:bg-primary-700 transition-colors"
         >
           Try again
         </button>

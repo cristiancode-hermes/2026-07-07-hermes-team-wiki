@@ -15,7 +15,7 @@ import { NgStyle } from '@angular/common';
       @if (src()) {
         <img [src]="src()" [alt]="name()" class="rounded-full w-full h-full object-cover" />
       } @else {
-        <span class="text-white">{{ initials() }}</span>
+        <span class="text-ink">{{ initials() }}</span>
       }
     </div>
   `,

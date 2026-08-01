@@ -11,29 +11,29 @@ export class PageVersion {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ type: 'int' })
   versionNumber: number;
 
-  @Column()
+  @Column({ type: 'varchar' })
   title: string;
 
-  @Column()
+  @Column({ type: 'text' })
   content: string;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'text' })
   summary: string | null;
 
-  @Column({ default: '+0/-0' })
+  @Column({ default: '+0/-0', type: 'varchar' })
   changeStats: string;
 
-  @Column()
+  @Column({ type: 'varchar' })
   pageId: string;
 
   @ManyToOne(() => Page, page => page.versions)
   @JoinColumn({ name: 'pageId' })
   page: Page;
 
-  @Column({ nullable: true })
+  @Column({ nullable: true, type: 'varchar' })
   authorId: string | null;
 
   @ManyToOne(() => User, user => user.versions)

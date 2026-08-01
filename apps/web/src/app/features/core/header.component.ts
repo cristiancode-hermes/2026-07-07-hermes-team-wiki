@@ -11,7 +11,7 @@ import { AvatarComponent } from '../shared/avatar.component';
   standalone: true,
   imports: [RouterLink, SearchGlobalComponent, ThemeToggleComponent, AvatarComponent],
   template: `
-    <header class="sticky top-0 z-30 bg-white dark:bg-secondary-900 border-b border-secondary-200 dark:border-secondary-700">
+    <header class="sticky top-0 z-30 bg-secondary-100 dark:bg-secondary-100 border-b border-secondary-200 dark:border-secondary-700">
       <div class="flex items-center justify-between h-14 px-4 lg:px-6">
         <div class="flex items-center gap-4">
           <a routerLink="/dashboard" class="flex items-center gap-2 shrink-0">
@@ -31,14 +31,14 @@ import { AvatarComponent } from '../shared/avatar.component';
             <div class="relative" #menuContainer>
               <button
                 (click)="menuOpen.set(!menuOpen())"
-                class="flex items-center gap-2 p-1.5 rounded-lg hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
+                class="flex items-center gap-2 p-1.5 rounded-md hover:bg-secondary-100 dark:hover:bg-secondary-800 transition-colors"
               >
                 <app-avatar [name]="user.name" [src]="user.avatarUrl" size="sm" />
                 <span class="hidden sm:inline text-sm font-medium text-secondary-700 dark:text-secondary-300">{{ user.name }}</span>
               </button>
 
               @if (menuOpen()) {
-                <div class="absolute right-0 top-full mt-1 w-48 bg-white dark:bg-secondary-800 rounded-lg shadow-lg border border-secondary-200 dark:border-secondary-700 py-1 z-50">
+                <div class="absolute right-0 top-full mt-1 w-48 bg-secondary-100 dark:bg-secondary-200 rounded-md  border border-secondary-200 dark:border-secondary-700 py-1 z-50">
                   <a routerLink="/settings" (click)="menuOpen.set(false)" class="block px-4 py-2 text-sm text-secondary-700 dark:text-secondary-300 hover:bg-secondary-50 dark:hover:bg-secondary-700">
                     Settings
                   </a>
